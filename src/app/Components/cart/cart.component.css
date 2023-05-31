@@ -1,0 +1,20 @@
+ img{
+    width: 200px;
+    height: 200px;
+    margin-bottom: 15px;
+    transition: 0.3s ease-in-out;
+
+}
+img:hover{
+    transition: 0.3s ease-in-out;
+    transform: scale(1.1);
+}
+#back{
+    position: absolute;
+    top: 40%;
+    left: 6%;
+    font-size: 30px;
+}
+#back:hover{
+    cursor: pointer;
+}

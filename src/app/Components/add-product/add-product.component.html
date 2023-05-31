@@ -1,0 +1,191 @@
+<!-- <form [formGroup]="productForm">
+    <label for="title">Title:</label><br>
+    <input type="text" id="title" name="title" maxlength="50" required><br><br>
+
+    <label for="imageURL">Image URL:</label><br>
+    <input type="url" id="imageURL" name="imageURL" required><br><br>
+
+    <label for="description">Description:</label><br>
+    <textarea id="description" name="description" rows="5" minlength="150" required></textarea><br><br>
+
+    <label for="priceRange">Price Range:</label><br>
+    <input type="number" id="priceRange" name="priceRange" required><br><br>
+
+    <label for="rating">Rating:</label><br>
+    <input type="number" id="rating" name="rating" min="0" max="5" step="0.1" required><br><br>
+
+    <label for="location">Location Available:</label><br>
+    <input type="checkbox" id="location1" name="location" value="Location 1">Location 1<br>
+    <input type="checkbox" id="location2" name="location" value="Location 2">Location 2<br>
+    <input type="checkbox" id="location3" name="location" value="Location 3">Location 3<br><br>
+
+    <label for="stock">Stock:</label><br>
+    <input type="radio" id="inStock" name="stock" value="In Stock" checked>In Stock<br>
+    <input type="radio" id="outOfStock" name="stock" value="Out of Stock">Out of Stock<br><br>
+
+    <input type="submit" value="Add Product">
+</form> -->
+<div class="animated fadeIn text-center" style=" margin-left: 300px;">
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="card">
+                <div class="card-header">
+                    <strong>Add Product</strong>
+                </div>
+                <div class="card-block">
+                </div>
+                <form [formGroup]="productForm" >
+                    <div class="form-group row" style=" margin-left: 50px; margin-top: 10px;">
+                        <label class="col-md-8 form-control-label text-center" style="font-weight: bold;" for="date-input">Image Url</label>
+                    </div>
+
+                    <div class="form-group row" id="field-space-text">
+                        <div class="col-md-8" style=" margin-left: 50px;">
+                            <input type="text" maxlength="50" id="imgUrls" name="imgUrls"
+                                placeholder="Enter Title." class="form-control text-center " formControlName="imgUrls">
+                            <!-- <div class="alert"
+                                *ngIf="!productForm.controls['imgUrls'].valid && productForm.controls['imgUrls'].touched">
+                            </div> -->
+
+                            <!-- <div class="alert" *ngIf="productForm.controls['imgUrls'].hasError('required') && (productForm.controls['imgUrls'].dirty || productForm.controls['imgUrls'].touched)">
+                                Image URL is required.
+                              </div> -->
+                              <div class="alert" *ngIf="productForm.controls['imgUrls'].invalid && productForm.controls['imgUrls'].touched">
+                                Image URL is required.
+                              </div>
+                        </div>
+                    </div>
+
+                    <!-- <div class="form-group">
+                        <label for="image">Image URL:</label>
+                        <input type="url" id="imgUrls" name="imgUrls" formControlName="imgUrls" class="form-control" required>
+                        <div *ngIf="productForm.controls.imgUrls.invalid && (productForm.controls.image.dirty || productForm.controls.image.touched)">
+                          <div *ngIf="productForm.controls.image.errors.required">Image URL is required.</div>
+                          <div *ngIf="productForm.controls.image.errors.pattern">Invalid URL format.</div> -->
+                        <!-- </div> -->
+                      <!-- </div> -->
+
+                    <div class="form-group row" style=" margin-left: 50px; margin-top: 10px;">
+                        <label class="col-md-8 form-control-label text-center" style="font-weight: bold;" for="date-input">Title</label>
+                    </div>
+                    <div class="form-group row" id="field-space-text">
+                        <div class="col-md-8" style=" margin-left: 50px;">
+                            <input type="text" maxlength="50" id="name" name="name"
+                                placeholder="Enter Title." class="form-control text-center " formControlName="name">
+                            <!-- <div class="alert"
+                                *ngIf="!productForm.controls['name'].valid && productForm.controls['name'].touched">
+                            </div> -->
+                            <div class="alert" *ngIf="productForm.controls['name'].invalid && productForm.controls['name'].touched">
+                                Title is required.
+                              </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row" style=" margin-left: 50px;margin-top: 10px;">
+                        <label class="col-md-8 form-control-label text-center" style="font-weight: bold;" for="date-input">Description</label>
+                    </div>
+                    <div class="form-group row" id="field-space-text">
+                        <div class="col-md-8" style=" margin-left: 50px;">
+                            <input type="text" minlength="150" id="title" name="decs"
+                                placeholder="Enter Description." class="form-control text-center " formControlName="decs">
+                            <!-- <div class="alert"
+                                *ngIf="!productForm.controls['decs'].valid && productForm.controls['decs'].touched">
+                            </div> -->
+                            <div class="alert" *ngIf="productForm.controls['decs'].invalid && productForm.controls['decs'].touched">
+                                Description is required.
+                              </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row" style=" margin-left: 50px;margin-top: 10px;">
+                        <label class="col-md-8 form-control-label text-center" style="font-weight: bold;" for="date-input">Price</label>
+                    </div>
+                    <div class="form-group row" id="field-space-text">
+                        <div class="col-md-8" style=" margin-left: 50px;">
+                            <input type="number" id="title" name="price"
+                                placeholder="Enter Price." class="form-control text-center " formControlName="price">
+                            <!-- <div class="alert"
+                                *ngIf="!productForm.controls['price'].valid && productForm.controls['price'].touched">
+                            </div> -->
+
+                            <div class="alert" *ngIf="productForm.controls['price'].invalid && productForm.controls['price'].touched">
+                                Price is required.
+                              </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row" style=" margin-left: 50px;margin-top: 10px;">
+                        <label class="col-md-8 form-control-label text-center" style="font-weight: bold;" for="date-input">Quantity</label>
+                    </div>
+                    <div class="form-group row" id="field-space-text">
+                        <div class="col-md-8" style=" margin-left: 50px;">
+                            <input type="number" id="Qty" name="Qty"
+                                placeholder="Enter Quantity." class="form-control text-center " formControlName="Qty">
+                            <!-- <div class="alert"
+                                *ngIf="!productForm.controls['Qty'].valid && productForm.controls['Qty'].touched">
+                            </div> -->
+
+                            <div class="alert" *ngIf="productForm.controls['Qty'].invalid && productForm.controls['Qty'].touched">
+                                Quantity is required.
+                              </div>
+                        </div>
+                    </div>
+                   
+                    <div class="form-group row" style=" margin-left: 50px;margin-top: 10px;">
+                        <label class="col-md-8 form-control-label text-center" style="font-weight: bold;" for="date-input">Availability Of Product</label>
+                    </div>
+                    <div class="form-group row" id="field-space-text">
+                        <div class="col-md-8" >
+                            <input type="checkbox" id="location1" name="location" style="margin-left: 100px;"
+                                value="Pune"  formControlName="location1">Pune
+                                <input type="checkbox" id="location2" name="location" style="margin-left: 50px;"
+                                value="Mumbai"  formControlName="location1">Mumbai
+                                <input type="checkbox" id="location3" name="location" style="margin-left: 50px;"
+                                value="Aurangabad"  formControlName="location1">Aurangabad
+
+                               
+                           
+                        </div>
+                    </div>
+
+
+                    <div class="form-group row" style=" margin-left: 50px;margin-top: 10px;">
+                        <label class="col-md-8 form-control-label text-center" style="font-weight: bold;" for="date-input">Stock</label>
+                    </div>
+                    <div class="form-group row" id="field-space-text">
+                        <div class="col-md-8" style=" margin-left: 50px;">
+                            <input type="radio" id="stock" name="stock" style="margin-left: 50px;"
+                                value="In Stock"  formControlName="stock" checked> In Stock
+
+                                <input type="radio" id="Outstock" name="stock" style="margin-left: 100px;"
+                                value="Out Of Stock"  formControlName="stock" checked> Out of Stock
+                           
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+                    <div class="text-center" style=" margin-top: 30px;">
+
+                        <button type="submit" class="btn btn-sm btn-success " (click)="addP()">
+                            <!-- [disabled]="!productForm.valid"  -->
+                            <!-- (click)="addP()" -->
+                            Add Product</button>&nbsp;&nbsp;
+                        <!-- <button type="submit" class="btn btn-sm btn-primary">
+                            Update Product</button>&nbsp;&nbsp; -->
+
+                        <button type="reset" class="btn btn-sm btn-danger">
+                            Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,57 @@
+<!-- <div class="card-top container-fluid">
+    <div class="container d-flex">
+        <div class="item">
+            <a >
+                <img src="../assets/allproduct.jpg" alt="" >
+                <h6>All Product</h6>
+            </a>
+        </div>
+         <div class="item">
+            <a >
+                <img src="../assets/electronics.jpg" alt="" >
+                <h6>Etronics Product</h6>
+            </a>
+        </div> 
+         <div class="item">
+            <a >
+                <img src="../assets/fashion.jpg" alt="" >
+                <h6>Fashion Product</h6>
+            </a>
+        </div> 
+                 <div class="item">
+            <a >
+                <img src="../assets/Jewellery.jpg" alt="" >
+                <h6>Jewellery</h6>
+            </a>
+        </div> 
+    </div>
+</div> -->
+<div class="container ">
+    <div class="form-group " >
+    <input [(ngModel)]="searchText" placeholder="Search Product here" class="search-input">
+    </div>
+    <div class="row">
+        <ng-container *ngFor="let item of products | filter : searchText">
+            <!-- (click)="redirectToDetails(item.id)" -->
+        <div class="card col-md-3">
+
+         <img src="{{item.imgUrls}}" alt="" >
+         <a [routerLink]="['/products', item.id]">
+            <h5>{{ item.name }}</h5>
+          </a>
+         <p>{{item.decs}}</p>
+         <p><strong>Price:</strong>Rs.{{item.price}}</p>
+         <p><strong>Quantity:</strong>{{item.Qty}}</p>
+<div>
+         <button class="btn btn-primary">Restore</button>&nbsp;&nbsp;
+         <button class="btn btn-primary" (click)="confirmDelete(item.id)">Remove</button>
+         <!-- (click)="confirmDelete(item.id)" -->
+        </div>
+        </div>
+    </ng-container>
+    </div>
+    <button class="floating-button"  (click)="addProduct()">Add Product</button>
+</div>
+<div >
+    
+</div>

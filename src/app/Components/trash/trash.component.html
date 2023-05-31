@@ -1,0 +1,18 @@
+
+<div class="container">
+    <div class="row">
+      <div class="card col-md-3" *ngFor="let item of trash">
+        <img src="{{item.imgUrls}}" alt="">
+        <a [routerLink]="['/products', item.id]">
+          <h5>{{ item.name }}</h5>
+        </a>
+        <p>{{item.decs}}</p>
+        <p><strong>Price:</strong> Rs.{{item.price}}</p>
+        <p><strong>Quantity:</strong> {{item.Qty}}</p>
+        <div>
+          <button class="btn btn-primary" >Restore</button>
+          <!-- (click)="restoreProduct(item.id)" -->
+        </div>
+      </div>
+    </div>
+  </div>

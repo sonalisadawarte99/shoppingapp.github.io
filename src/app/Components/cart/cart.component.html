@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="col-sm-12 col-md-2">
+
+    </div>
+</div>
+
+<div class="container">
+    <i class="fas fa-arrow-left " id="back" (click)="goBack()"></i>
+   <img src="{{product?.imgUrls}}" >
+   
+    <h2>{{ product?.name }}</h2>
+    <p>{{ product?.decs }}</p>
+    <p><strong>Price:</strong> Rs.{{ product?.price }}</p>
+    <p><strong>Quantity:</strong> {{ product?.Qty }}</p>
+    <p>Rating: *** </p>
+    <p>Reviews : Good Product </p>
+    <button class="btn btn-primary">Add to Cart</button>
+    <!-- <button class="btn btn-secondary" (click)="goBack()">Back</button> -->
+  </div>
